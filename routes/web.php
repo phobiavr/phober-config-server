@@ -20,6 +20,13 @@ $router->get('/', function () use ($router) {
     'DB_MEDIA_USERNAME' => 'root',
     'DB_MEDIA_PASSWORD' => 'root',
 
+    'DB_NOTIFICATION_CONNECTION' => 'mysql',
+    'DB_NOTIFICATION_HOST' => 'db',
+    'DB_NOTIFICATION_PORT' => '3306',
+    'DB_NOTIFICATION_DATABASE' => 'phober_notification',
+    'DB_NOTIFICATION_USERNAME' => 'root',
+    'DB_NOTIFICATION_PASSWORD' => 'root',
+
     'AWS_ACCESS_KEY_ID' => env('AWS_ACCESS_KEY_ID'),
     'AWS_SECRET_ACCESS_KEY' => env('AWS_SECRET_ACCESS_KEY'),
     'AWS_DEFAULT_REGION' => env('AWS_DEFAULT_REGION'),
