@@ -28,6 +28,13 @@ Route::get('/', function () {
         'DB_NOTIFICATION_USERNAME' => 'root',
         'DB_NOTIFICATION_PASSWORD' => 'root',
 
+        'DB_LOG_CONNECTION' => 'mysql',
+        'DB_LOG_HOST' => 'db',
+        'DB_LOG_PORT' => '3306',
+        'DB_LOG_DATABASE' => 'phober_log',
+        'DB_LOG_USERNAME' => 'root',
+        'DB_LOG_PASSWORD' => 'root',
+
         'AWS_ACCESS_KEY_ID' => env('AWS_ACCESS_KEY_ID'),
         'AWS_SECRET_ACCESS_KEY' => env('AWS_SECRET_ACCESS_KEY'),
         'AWS_DEFAULT_REGION' => env('AWS_DEFAULT_REGION'),
