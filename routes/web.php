@@ -44,7 +44,7 @@ Route::get('/', function () {
         'BROADCAST_DRIVER' => 'log',
         'CACHE_DRIVER' => 'file',
         'FILESYSTEM_DISK' => 'local',
-        'QUEUE_CONNECTION' => 'sync',
+        'QUEUE_CONNECTION' => 'database',
         'SESSION_DRIVER' => 'file',
         'SESSION_LIFETIME' => '120',
 
