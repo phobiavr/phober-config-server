@@ -186,6 +186,8 @@ return [
          * Package Service Providers...
          */
 
+        \Abdukhaligov\LaravelForceJson\ForceJsonServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -194,6 +196,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\TelescopeServiceProvider::class,
 
     ],
 
