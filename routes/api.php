@@ -6,7 +6,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $configs = [
         'APP_NAME' => 'Phober',
-        'APP_NAME' => 'Phober',
         'APP_KEY' => 'base64:10GvWo3QVZLvODVr0rKxufpyI2rUVmLqbWv6dfEWs4U=',
         'APP_ENV' => 'local',
         'APP_DEBUG' => 'true',
