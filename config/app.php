@@ -187,6 +187,7 @@ return [
          */
 
         \Abdukhaligov\LaravelForceJson\ForceJsonServiceProvider::class,
+        \Shared\Package\PackageProvider::class,
 
         /*
          * Application Service Providers...
