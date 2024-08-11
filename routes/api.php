@@ -14,8 +14,6 @@ Route::get('/', function () {
         'LOG_DEPRECATIONS_CHANNEL' => null,
         'LOG_LEVEL' => 'debug',
 
-        'AUTH_SERVER' => 'http://auth-server',
-
         'DB_AUTH_CONNECTION' => 'mysql',
         'DB_AUTH_HOST' => 'db',
         'DB_AUTH_PORT' => '3306',
