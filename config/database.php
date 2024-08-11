@@ -93,13 +93,13 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
-        'db_log' => [
-            'driver' => env('DB_LOG_CONNECTION', 'mysql'),
-            'host' => env('DB_LOG_HOST', '127.0.0.1'),
-            'port' => env('DB_LOG_PORT', '3306'),
-            'database' => env('DB_LOG_DATABASE', 'phober_log'),
-            'username' => env('DB_LOG_USERNAME', 'forge'),
-            'password' => env('DB_LOG_PASSWORD', ''),
+        'db_shared' => [
+            'driver' => env('DB_SHARED_CONNECTION', 'mysql'),
+            'host' => env('DB_SHARED_HOST', '127.0.0.1'),
+            'port' => env('DB_SHARED_PORT', '3306'),
+            'database' => env('DB_SHARED_DATABASE', 'phober_log'),
+            'username' => env('DB_SHARED_USERNAME', 'forge'),
+            'password' => env('DB_SHARED_PASSWORD', ''),
         ],
 
     ],

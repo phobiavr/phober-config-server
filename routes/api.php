@@ -42,12 +42,12 @@ Route::get('/', function () {
         'DB_NOTIFICATION_USERNAME' => 'root',
         'DB_NOTIFICATION_PASSWORD' => 'root',
 
-        'DB_LOG_CONNECTION' => 'mysql',
-        'DB_LOG_HOST' => 'db',
-        'DB_LOG_PORT' => '3306',
-        'DB_LOG_DATABASE' => 'phober_log',
-        'DB_LOG_USERNAME' => 'root',
-        'DB_LOG_PASSWORD' => 'root',
+        'DB_SHARED_CONNECTION' => 'mysql',
+        'DB_SHARED_HOST' => 'db',
+        'DB_SHARED_PORT' => '3306',
+        'DB_SHARED_DATABASE' => 'phober_log',
+        'DB_SHARED_USERNAME' => 'root',
+        'DB_SHARED_PASSWORD' => 'root',
 
         'BROADCAST_DRIVER' => 'log',
         'CACHE_DRIVER' => 'file',
