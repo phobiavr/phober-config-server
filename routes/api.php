@@ -24,7 +24,7 @@ Route::get('/', function () {
         'DB_SHARED_CONNECTION' => 'mysql',
         'DB_SHARED_HOST' => 'db',
         'DB_SHARED_PORT' => '3306',
-        'DB_SHARED_DATABASE' => 'phober_log',
+        'DB_SHARED_DATABASE' => 'phober_shared',
         'DB_SHARED_USERNAME' => 'root',
         'DB_SHARED_PASSWORD' => 'root',
 
