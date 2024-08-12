@@ -14,33 +14,12 @@ Route::get('/', function () {
         'LOG_DEPRECATIONS_CHANNEL' => null,
         'LOG_LEVEL' => 'debug',
 
-        'DB_AUTH_CONNECTION' => 'mysql',
-        'DB_AUTH_HOST' => 'db',
-        'DB_AUTH_PORT' => '3306',
-        'DB_AUTH_DATABASE' => 'phober_auth',
-        'DB_AUTH_USERNAME' => 'root',
-        'DB_AUTH_PASSWORD' => 'root',
-
-        'DB_DEVICE_CONNECTION' => 'mysql',
-        'DB_DEVICE_HOST' => 'db',
-        'DB_DEVICE_PORT' => '3306',
-        'DB_DEVICE_DATABASE' => 'phober_device',
-        'DB_DEVICE_USERNAME' => 'root',
-        'DB_DEVICE_PASSWORD' => 'root',
-
         'DB_MEDIA_CONNECTION' => 'mysql',
         'DB_MEDIA_HOST' => 'db',
         'DB_MEDIA_PORT' => '3306',
         'DB_MEDIA_DATABASE' => 'phober_media',
         'DB_MEDIA_USERNAME' => 'root',
         'DB_MEDIA_PASSWORD' => 'root',
-
-        'DB_NOTIFICATION_CONNECTION' => 'mysql',
-        'DB_NOTIFICATION_HOST' => 'db',
-        'DB_NOTIFICATION_PORT' => '3306',
-        'DB_NOTIFICATION_DATABASE' => 'phober_notification',
-        'DB_NOTIFICATION_USERNAME' => 'root',
-        'DB_NOTIFICATION_PASSWORD' => 'root',
 
         'DB_SHARED_CONNECTION' => 'mysql',
         'DB_SHARED_HOST' => 'db',
