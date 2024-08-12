@@ -14,13 +14,6 @@ Route::get('/', function () {
         'LOG_DEPRECATIONS_CHANNEL' => null,
         'LOG_LEVEL' => 'debug',
 
-        'DB_MEDIA_CONNECTION' => 'mysql',
-        'DB_MEDIA_HOST' => 'db',
-        'DB_MEDIA_PORT' => '3306',
-        'DB_MEDIA_DATABASE' => 'phober_media',
-        'DB_MEDIA_USERNAME' => 'root',
-        'DB_MEDIA_PASSWORD' => 'root',
-
         'DB_SHARED_CONNECTION' => 'mysql',
         'DB_SHARED_HOST' => 'db',
         'DB_SHARED_PORT' => '3306',
