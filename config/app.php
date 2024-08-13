@@ -160,6 +160,7 @@ return [
          */
         Illuminate\Auth\AuthServiceProvider::class,
         Illuminate\Cache\CacheServiceProvider::class,
+        Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
         Illuminate\Redis\RedisServiceProvider::class,
@@ -175,7 +176,6 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\TelescopeServiceProvider::class,
     ],
 
     /*
