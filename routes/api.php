@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Cache;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -39,7 +41,9 @@ Route::get('/', function () {
         'MAIL_FROM_NAME'    => '${APP_NAME}',
     ];
 
-    $data = \DB::table('configs')->get()->pluck('value', 'key')->toArray();
+    $data = Cache::remember('configs_data', 300, function () {
+        return DB::table('configs')->get()->pluck('value', 'key')->toArray();
+    });
 
     return response()->json(array_merge($configs, $data));
 });
