@@ -163,7 +163,10 @@ return [
         Illuminate\Foundation\Providers\ConsoleSupportServiceProvider::class,
         Illuminate\Database\DatabaseServiceProvider::class,
         Illuminate\Filesystem\FilesystemServiceProvider::class,
+        Illuminate\Foundation\Providers\FoundationServiceProvider::class,
         Illuminate\Redis\RedisServiceProvider::class,
+        Illuminate\Translation\TranslationServiceProvider::class,
+        Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
         /*
