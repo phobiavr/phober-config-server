@@ -12,6 +12,9 @@ Route::get('/', function () {
         'APP_DEBUG'    => 'true',
         'APP_TIMEZONE' => 'UTC',
 
+        'TELESCOPE_ENABLED' => 'true',
+        'SERVICE_KEY'       => 'base64:10GvWo3QVZLvODVr0rKxufpyI2rUVmLqbWv6dfEWs4U=',
+
         'LOG_CHANNEL'              => 'stack',
         'LOG_DEPRECATIONS_CHANNEL' => null,
         'LOG_LEVEL'                => 'debug',
