@@ -12,7 +12,7 @@ Route::get('/', function () {
 
         'TELESCOPE_ENABLED' => 'true',
 
-        'LOG_CHANNEL'              => 'stack',
+        'LOG_CHANNEL'              => 'logstash',
         'LOG_DEPRECATIONS_CHANNEL' => null,
         'LOG_LEVEL'                => 'debug',
 
