@@ -46,7 +46,7 @@ Route::get('/', function () {
             return DB::table('configs')->get()->pluck('value', 'key')->toArray();
         });
     } else {
-        $data = DB::table('configs')->get()->pluck('value', 'key')->toArray();
+        $data = DB::connection('db_configs')->table('configs')->get()->pluck('value', 'key')->toArray();
     }
 
     return response()->json(array_merge($configs, $data));

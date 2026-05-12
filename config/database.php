@@ -111,6 +111,15 @@ return [
             // 'encrypt' => env('DB_ENCRYPT', 'yes'),
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
+
+        'db_configs' => [
+            'driver' => env('DB_CONFIGS_CONNECTION', 'mysql'),
+            'host' => env('DB_CONFIGS_HOST', '127.0.0.1'),
+            'port' => env('DB_CONFIGS_PORT', '3306'),
+            'database' => env('DB_CONFIGS_DATABASE', 'phober_configs'),
+            'username' => env('DB_CONFIGS_USERNAME', 'forge'),
+            'password' => env('DB_CONFIGS_PASSWORD', ''),
+        ],
     ],
 
     /*
