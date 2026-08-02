@@ -69,6 +69,7 @@ jobs:
             DB_USERNAME: root
             DB_PASSWORD: root
             APP_KEY: base64:cGhvYmVyLXRlc3QtYXBwLWtleS0zMi1ieXRlcyEhISE=
+            BROADCAST_CONNECTION: log
 
         steps:
             - uses: actions/checkout@v4
