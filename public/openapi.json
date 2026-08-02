@@ -1,0 +1,80 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Phober Config Server API",
+    "description": "Serves runtime configuration (feature flags, cross-service settings) that every other service pulls at boot via the shared ConfigClient. Reached externally via https://api.phober.test/configs/*. Read-only — config entries are created/edited exclusively through Nova in adminpanel, not via this API.",
+    "version": "1.0.0"
+  },
+  "servers": [
+    { "url": "https://api.phober.test/configs", "description": "Via API gateway" }
+  ],
+  "tags": [
+    { "name": "Config" }
+  ],
+  "components": {
+    "securitySchemes": {
+      "privateService": {
+        "type": "apiKey",
+        "in": "header",
+        "name": "X-Service-Secret",
+        "description": "Shared inter-service secret (private middleware)."
+      }
+    }
+  },
+  "paths": {
+    "/": {
+      "get": {
+        "tags": ["Config"],
+        "summary": "Get all config key/value pairs",
+        "description": "Unauthenticated, unfiltered, unpaginated. Called by every service's ConfigClient::update() at boot/deploy to rebuild .env.shared. Optionally cached server-side for 5 minutes when USE_CACHE=true.",
+        "responses": {
+          "200": {
+            "description": "OK — flat object of every config row, key to value (both strings). Empty object if no rows exist.",
+            "content": {
+              "application/json": {
+                "schema": { "type": "object", "additionalProperties": { "type": "string" } },
+                "example": { "FEATURE_RUDE_MODE": "false" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/health": {
+      "get": {
+        "tags": ["Config"],
+        "summary": "Health check",
+        "description": "Registered by every service via the shared package, not specific to config-server's own logic.",
+        "responses": {
+          "200": { "description": "OK", "content": { "application/json": { "schema": { "type": "object", "properties": { "status": { "type": "string", "example": "OK" } } } } } }
+        }
+      }
+    },
+    "/instance-info": {
+      "get": {
+        "tags": ["Config"],
+        "summary": "Get the container's hostname",
+        "description": "Registered by every service via the shared package.",
+        "responses": {
+          "200": { "description": "OK", "content": { "application/json": { "schema": { "type": "object", "properties": { "instance_id": { "type": "string" } } } } } }
+        }
+      }
+    },
+    "/config-client/update": {
+      "get": {
+        "tags": ["Config"],
+        "summary": "Trigger this instance to re-pull config from config-server",
+        "description": "Registered by every service via the shared package (drives the config-client:update artisan command). Since config-server itself also loads the shared package, this endpoint exists on config-server too, even though it would be pulling config-server's own data.",
+        "security": [{ "privateService": [] }],
+        "parameters": [
+          { "name": "dry-run", "in": "query", "required": false, "schema": { "type": "boolean" } },
+          { "name": "overwrite", "in": "query", "required": false, "schema": { "type": "boolean" } },
+          { "name": "custom-env-file", "in": "query", "required": false, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Sync report — exact field shape not independently verified against source, expect counts of new/updated/deleted config entries.", "content": { "application/json": { "schema": { "type": "object" } } } }
+        }
+      }
+    }
+  }
+}
