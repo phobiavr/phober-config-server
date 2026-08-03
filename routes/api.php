@@ -7,10 +7,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     if (config('app.use_cache')) {
         $data = Cache::remember('configs_data', 300, function () {
-            return Config::query()->get()->pluck('value', 'key')->toArray();
+            return Config::query()->pluck('value', 'key')->toArray();
         });
     } else {
-        $data = Config::query()->get()->pluck('value', 'key')->toArray();
+        $data = Config::query()->pluck('value', 'key')->toArray();
     }
 
     return response()->json($data);
